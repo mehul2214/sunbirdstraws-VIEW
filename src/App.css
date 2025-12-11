@@ -1,0 +1,148 @@
+/* ============================
+   🌿 Design Tokens
+   ============================ */
+:root {
+  --color-bg-primary: #fcf7f1;
+  --color-bg-accent: #d3b69a;
+  --color-bg-white: #ffffff;
+
+  --color-text-dark: #3a2f2f;
+  --color-text-muted: #5a4a42;
+  --color-highlight: #a67c52;
+
+  --font-family-base: 'Segoe UI', sans-serif;
+  --border-radius: 6px;
+  --transition-fast: 0.3s ease;
+}
+
+/* ============================
+   🌐 Global Styles
+   ============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-dark);
+}
+
+/* ============================
+   🧩 Section Layouts
+   ============================ */
+.section {
+  width: 100%;
+  padding: 4rem 0; /* ✅ Full-width, no horizontal padding */
+  background-color: var(--color-bg-white);
+}
+
+.section.tight {
+  padding: 6rem 0;
+}
+
+.container {
+  width: 100%;
+  padding: 0; /* ✅ No horizontal padding */
+  margin: 0;
+}
+
+/* ✅ Section Separation Add-ons */
+.section-divider {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.section-alt {
+  background-color: #f8f4ef;
+}
+
+.section-shadow {
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.section-top-border {
+  border-top: 4px solid #e0e0e0;
+}
+
+/* ============================
+   🎯 Typography
+   ============================ */
+h1, h2, h3, h4 {
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.eyebrow {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-highlight);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================
+   🔘 Buttons
+   ============================ */
+.btn {
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--color-bg-accent);
+  color: var(--color-text-dark);
+}
+
+.btn-primary:hover {
+  background-color: #c2a183;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-bg-accent);
+  border: 2px solid var(--color-bg-accent);
+}
+
+.btn-ghost:hover {
+  background-color: #f5e9dd;
+}
+
+/* ============================
+   🎬 Page Animation
+   ============================ */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-fade {
+  animation: pageFadeIn 0.6s ease-out forwards;
+  will-change: opacity, transform;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}

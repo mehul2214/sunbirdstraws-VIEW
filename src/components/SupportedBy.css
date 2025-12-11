@@ -1,0 +1,75 @@
+/* Supported By Section */
+.partners {
+  padding: 4rem 2rem;
+  background-color: #ffffff; /* White background */
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Heading — matches Awards & Recognition */
+.supported-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #3a2f2f; /* Warm black — same as Awards heading */
+  margin-bottom: 2rem; /* Matches Awards heading spacing */
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.2;
+}
+
+
+/* Scroll Container */
+.logo-scroll {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Logo Row — continuous scroll */
+.logos {
+  display: flex;
+  gap: 2rem;
+  animation: scrollLogos 60s linear infinite;
+  will-change: transform;
+}
+
+/* Individual Logo Tile — no background box */
+.logo-tile {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.logo-tile:hover {
+  transform: scale(1.05);
+}
+
+/* Logo Image */
+.logo-tile img {
+  max-width: 140px;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+/* Continuous Scroll Animation — seamless loop */
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo-tile img {
+    max-width: 120px;
+    max-height: 70px;
+  }
+
+  .supported-heading {
+    font-size: 2rem;
+  }
+}
