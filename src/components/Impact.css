@@ -1,0 +1,130 @@
+/* ✅ Section Wrapper */
+.impact-section {
+  background-color: #ffffff;
+  padding: 4rem 1.5rem;
+}
+
+/* ✅ Container */
+.impact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ✅ Heading */
+.impact-title {
+  font-size: 2.3rem;
+  font-weight: 600;
+  color: #3a2f2f;
+  margin-bottom: 0.75rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.impact-subtitle {
+  font-size: 1.1rem;
+  color: #3a2f2f;
+  margin-bottom: 2rem;
+}
+
+/* ✅ Panel Grid */
+.impact-panels {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ✅ Animation Keyframes */
+@keyframes bounceZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ✅ Individual Panel with Thin Black Border + Animation */
+.impact-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 260px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  animation: fadeUp 1.2s ease-out;
+  animation-fill-mode: both;
+}
+
+.impact-panel:hover {
+  animation: bounceZoom 0.4s ease;
+}
+
+/* ✅ Enlarged Icon Styling */
+.impact-icon {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/* ✅ Text Box */
+.impact-text-box {
+  background-color: #f5e9dc;
+  padding: 1.75rem;
+  border-radius: 6px;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.impact-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #3a2f2f;
+  margin-bottom: 0.3rem;
+}
+
+.impact-text {
+  font-size: 0.95rem;
+  color: #3a2f2f;
+  line-height: 1.4;
+}
+
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .impact-title {
+    font-size: 2.2rem;
+  }
+
+  .impact-subtitle {
+    font-size: 1rem;
+  }
+
+  .impact-panels {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .impact-panel {
+    width: 100%;
+    max-width: 300px;
+    padding: 1.25rem 1rem;
+  }
+
+  .impact-icon {
+    width: 140px;
+    height: 140px;
+  }
+
+  .impact-text-box {
+    padding: 0.25rem;
+  }
+}
