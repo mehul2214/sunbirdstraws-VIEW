@@ -1,0 +1,60 @@
+.straws-page {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  margin-top: 80px; /* ✅ Pushes section below fixed header */
+}
+
+
+.straws-hero h1 {
+  font-size: 2.5rem;
+  color: #3a2f2f;
+  margin-bottom: 1rem;
+}
+
+.straws-hero p {
+  font-size: 1.2rem;
+  color: #5a4a42;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.straws-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.product-card {
+  background-color: #fcf7f1;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  color: #3a2f2f;
+  font-weight: 600;
+}
+
+.straws-contact p {
+  font-size: 1.1rem;
+  color: #3a2f2f;
+}
+
+.straws-contact a {
+  color: #d3b69a;
+  font-weight: 700;
+  text-decoration: underline;
+}
