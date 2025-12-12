@@ -1,0 +1,91 @@
+/* Awards Section */
+.awards {
+  padding: 1.5rem 1.5rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* Heading */
+.awards-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #3a2f2f;
+  margin-bottom: 0.5rem;
+}
+
+.awards-subheading {
+  font-size: 1.2rem;
+  color: #5a4a42;
+  margin-bottom: 2rem;
+}
+
+/* Grid Layout — 3 logos in row 1, 2 in row 2 */
+.awards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+/* Row 1: First 3 logos */
+.award-tile {
+  flex: 0 0 calc(33.333% - 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 2rem;
+  min-height: 240px;
+  max-width: 260px;
+}
+
+/* Row 2: Logos 4 and 5 */
+.award-tile:nth-child(n+4) {
+  flex: 0 0 calc(50% - 2rem);
+}
+
+/* Logo Styling */
+.award-logo {
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.award-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Label Styling */
+.award-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3a2f2f;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .award-tile {
+    flex: 0 0 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding-bottom: 1.5rem;
+  }
+
+  .award-logo {
+    max-width: 200px;
+    aspect-ratio: auto;
+  }
+
+  .awards-heading {
+    font-size: 2rem;
+  }
+
+  .awards-subheading {
+    font-size: 1.1rem;
+  }
+}
