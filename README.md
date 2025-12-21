@@ -6,8 +6,9 @@ A React.js marketing website for Sunbird Straws, a startup producing eco-friendl
 
 - **React** v19.1.1
 - **React Router** v7.8.2 (Client-side routing)
-- **React Icons** v5.5.0 (Social media icons)
-- **AOS** v2.3.4 (Animate On Scroll library)
+- **Material-UI (MUI)** v7.3.6 (UI component library)
+- **MUI Icons** v7.3.6 (Icon library)
+- **Emotion** v11.14.0 (CSS-in-JS styling)
 - **Create React App** (Build tooling)
 
 ## Getting Started
@@ -53,6 +54,7 @@ sunbirdstraws-VIEW/
 ├── package.json                    # Project config & dependencies
 ├── package-lock.json               # Dependency lock file
 ├── README.md                       # Project documentation
+├── .gitignore                      # Git ignore rules
 │
 ├── public/                         # Static public assets
 │   ├── index.html                  # Main HTML template
@@ -64,53 +66,37 @@ sunbirdstraws-VIEW/
 │
 └── src/                            # Source code
     ├── index.js                    # React entry point
-    ├── index.css                   # Global styles
+    ├── index.css                   # Minimal global styles
     ├── App.js                      # Main app with routing
-    ├── App.css                     # App-level styles
     ├── App.test.js                 # App component tests
     ├── logo.svg                    # Default CRA logo
     ├── reportWebVitals.js          # Performance monitoring
     ├── setupTests.js               # Jest test setup
     │
-    ├── components/                 # Reusable UI components
-    │   ├── Header.js               # Navigation header
-    │   ├── Header.css
-    │   ├── Hero.js                 # Hero carousel section
-    │   ├── Hero.css
-    │   ├── Impact.js               # Impact statistics section
-    │   ├── Impact.css
+    ├── theme/                      # MUI Theme configuration
+    │   └── theme.js                # Custom theme with colors & typography
+    │
+    ├── components/                 # Reusable UI components (MUI styled)
+    │   ├── Header.js               # Navigation header with scroll effects
+    │   ├── Hero.js                 # Hero carousel with decorations
+    │   ├── Impact.js               # Impact statistics cards
     │   ├── Inspiration.js          # Call-to-action section
-    │   ├── Inspiration.css
     │   ├── Awards.js               # Awards & recognition
-    │   ├── Awards.css
-    │   ├── SupportedBy.js          # Partner logos section
-    │   ├── SupportedBy.css
-    │   ├── Testimonials.js         # Customer testimonials
-    │   ├── Testimonials.css
-    │   ├── Footer.js               # Site footer
-    │   └── Footer.css
+    │   ├── SupportedBy.js          # Partner logos grid
+    │   ├── Testimonials.js         # Auto-rotating testimonials
+    │   └── Footer.js               # Site footer
     │
     ├── Pages/                      # Page components (routes)
-    │   ├── OurStory.js             # About/story page
-    │   ├── OurStory.css
-    │   ├── OurTeam.js              # Team page
-    │   ├── OurTeam.css
+    │   ├── OurStory.js             # Company story (5-section layout)
+    │   ├── OurTeam.js              # Team & founder page
     │   ├── SunbirdStraws.js        # Products page
-    │   ├── SunbirdStraws.css
-    │   ├── News.js                 # Media coverage page
-    │   ├── News.css
-    │   ├── Gallery.js              # Image gallery page
-    │   ├── Gallery.css
-    │   ├── ContactUs.js            # Contact page
-    │   ├── ContactUs.css
+    │   ├── News.js                 # Media coverage grid
+    │   ├── Gallery.js              # Image gallery
+    │   ├── ContactUs.js            # Contact form with animation
     │   ├── TermsandCondition.js    # Terms & Conditions
-    │   ├── TermsandCondition.css
     │   ├── PrivacyPolicy.js        # Privacy Policy
-    │   ├── PrivacyPolicy.css
     │   ├── CancellationRefund.js   # Refund policy
-    │   ├── CancellationRefund.css
-    │   ├── ShippingPolicy.js       # Shipping policy
-    │   └── ShippingPolicy.css
+    │   └── ShippingPolicy.js       # Shipping policy
     │
     └── assets/                     # Media files and images
         ├── Logo New .webp          # Main logo
@@ -121,69 +107,28 @@ sunbirdstraws-VIEW/
         ├── worldmapimage.jpg       # World map image
         │
         ├── AwardsRecognition/      # Award logos (5 files)
-        │   ├── AgriIndiaHackathon.svg
-        │   ├── HoneyBeeInclusive.webp
-        │   ├── LeaptoUnicorn.webp
-        │   ├── UpdatedMassChallengeSwitzerland.png
-        │   └── UpdatedSwadesStartupIcon.png
-        │
         ├── ImpactSection/          # Impact section images (4 files)
-        │   ├── Strawsicon.jpg
-        │   ├── adobexp.jpeg
-        │   ├── co2emission.jpg
-        │   └── ruralwomengraphic.webp
-        │
         ├── MediaNews/              # Media logos (8 files)
-        │   ├── DWtravels.jpeg
-        │   ├── ForbesIndia.jpeg
-        │   ├── SBSMalayalam.webp
-        │   ├── TheHinduLogo.png
-        │   ├── TimesofIndia.png
-        │   ├── betterIndia.png
-        │   ├── humansofbombay.png
-        │   └── mathurbhuminews.jpg
-        │
         ├── OurStory/               # Story page images (4 files)
-        │   ├── TheProblemImage.png
-        │   ├── TheSolutionCoconut.png
-        │   ├── Welcomourstory.jpeg
-        │   └── mapfromglobalshift.png
-        │
         ├── RuralWomenEmpowerment/  # Women empowerment photos (3 files)
-        │   ├── Women1.jpeg
-        │   ├── Women2.jpeg
-        │   └── Women3.jpeg
-        │
         ├── SunbirdStraws/          # Product images (1 file)
-        │   └── Bobastraws.jpg
-        │
         ├── Supported by/           # Partner logos (15 files)
-        │   ├── ChristBangalore.png
-        │   ├── Cummins.png
-        │   ├── HDFCgrants.jpg
-        │   ├── IIM.webp
-        │   ├── JubilantFoodWorks.png
-        │   ├── PernodRicard.png
-        │   ├── SIDBIGIAN.png
-        │   ├── Sidley.png
-        │   ├── climatekic.jpeg
-        │   ├── elevatelogo.jpg
-        │   ├── keralaargiculturaluniversity.jpg
-        │   ├── millercentre.png
-        │   ├── selcologo.png
-        │   ├── socialalpha .jpeg
-        │   └── wwfIndia .jpg
-        │
         ├── Team/                   # Team images (1 file)
-        │   └── TeamCover.jpeg
-        │
         └── Testimonals/            # Testimonial logos (5 files)
-            ├── ChaiDays.png
-            ├── ChefPillai.jpg
-            ├── FourSeasonslogo.png
-            ├── GrandMercure.png
-            └── TheLeelaPalaceHotels.png
 ```
+
+## Theme Configuration
+
+The app uses a custom MUI theme with the following color palette:
+
+| Property | Value | Description |
+|----------|-------|-------------|
+| Primary | `#d3b69a` | Tan/Taupe |
+| Secondary | `#a67c52` | Bronze |
+| Background | `#fcf7f1` | Warm Beige |
+| Text Primary | `#3a2f2f` | Dark Brown |
+| Text Secondary | `#5a4a42` | Muted Brown |
+| Success | `#007b5e` | Green |
 
 ## Routes
 
@@ -191,7 +136,7 @@ sunbirdstraws-VIEW/
 |-------|------|-------------|
 | `/` | Home | Landing page with all sections |
 | `/our-story` | Our Story | Company mission and history |
-| `/our-team` | Our Team | Team members |
+| `/our-team` | Our Team | Team members & founder |
 | `/sunbird-straws` | Sunbird Straws | Product showcase |
 | `/news` | News | Media coverage and press |
 | `/gallery` | Gallery | Image gallery |
@@ -204,16 +149,35 @@ sunbirdstraws-VIEW/
 ## Components Overview
 
 ### Layout Components
-- **Header** - Navigation bar with dropdown menus and mobile hamburger menu
+- **Header** - AppBar with scroll effects, dropdown menus, mobile drawer
 - **Footer** - Site footer with links, address, and social media icons
 
 ### Home Page Sections
-- **Hero** - Auto-rotating image carousel (8-second intervals)
-- **Impact** - Statistics and impact metrics display
-- **Inspiration** - Call-to-action section
-- **Awards** - Awards and recognition showcase
-- **SupportedBy** - Partner and investor logos grid
-- **Testimonials** - Customer testimonials carousel
+- **Hero** - Auto-rotating carousel (8s intervals) with decorative elements
+- **Impact** - Statistics cards with hover effects
+- **Inspiration** - CTA section with gradient background
+- **Awards** - Awards showcase with card containers
+- **SupportedBy** - Partner logos grid with hover effects
+- **Testimonials** - Auto-rotating testimonials (5s intervals)
+
+### Page Features
+- **Our Story** - 5-section layout with split hero, problem/solution narrative
+- **Our Team** - Founder bio, women empowerment section, join us CTA
+- **News** - Featured article card, media coverage grid, press contact
+- **Contact Us** - Split layout with animated illustration, contact cards
+
+## Design System
+
+All components follow a unified design system:
+
+| Property | Value |
+|----------|-------|
+| Section Padding | `py: { xs: 6, md: 8 }` |
+| Card Border Radius | `16px` |
+| Card Shadow | `0 4px 20px rgba(0, 0, 0, 0.06)` |
+| Hover Effect | `translateY(-5px)` |
+| Transitions | `all 0.3s ease` |
+| Background Pattern | Alternating warm gradients |
 
 ## Build for Production
 
