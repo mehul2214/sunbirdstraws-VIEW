@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
+import { ThemeProvider, CssBaseline, Box, Fade } from "@mui/material";
+import theme from "./theme/theme";
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -25,161 +26,186 @@ import ContactUs from "./Pages/ContactUs";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Home Page */}
-        <Route
-          path="/"
-          element={
-            <>
-              <div id="dropdown-root"></div>
-              <Header />
-              <div className="page-fade">
-                <Hero />
-                <Impact />
-                <Inspiration />
-                <Awards />
-                <SupportedBy />
-                <Testimonials />
-                <Footer />
-              </div>
-            </>
-          }
-        />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Routes>
+          {/* Home Page */}
+          <Route
+            path="/"
+            element={
+              <>
+                <div id="dropdown-root"></div>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <Hero />
+                    <Impact />
+                    <Inspiration />
+                    <Awards />
+                    <SupportedBy />
+                    <Testimonials />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
 
-        {/* Legal Pages */}
-        <Route
-          path="/terms-and-conditions"
-          element={
-            <>
-              <Header />
-              <div className="page-fade">
-                <TermsandCondition />
-                <Footer />
-              </div>
-            </>
-          }
-        />
-        <Route
-          path="/privacy-policy"
-          element={
-            <>
-              <Header />
-              <div className="page-fade">
-                <PrivacyPolicy />
-                <Footer />
-              </div>
-            </>
-          }
-        />
-        <Route
-          path="/cancellation-refund-policy"
-          element={
-            <>
-              <Header />
-              <div className="page-fade">
-                <CancellationRefund />
-                <Footer />
-              </div>
-            </>
-          }
-        />
-        <Route
-          path="/shipping-policy"
-          element={
-            <>
-              <Header />
-              <div className="page-fade">
-                <ShippingPolicy />
-                <Footer />
-              </div>
-            </>
-          }
-        />
+          {/* Legal Pages */}
+          <Route
+            path="/terms-and-conditions"
+            element={
+              <>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <TermsandCondition />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
+          <Route
+            path="/privacy-policy"
+            element={
+              <>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <PrivacyPolicy />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
+          <Route
+            path="/cancellation-refund-policy"
+            element={
+              <>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <CancellationRefund />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
+          <Route
+            path="/shipping-policy"
+            element={
+              <>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <ShippingPolicy />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
 
-        {/* Media Pages */}
-        <Route
-          path="/news"
-          element={
-            <>
-              <Header />
-              <div className="page-fade">
-                <News />
-                <Footer />
-              </div>
-            </>
-          }
-        />
-        <Route
-          path="/gallery"
-          element={
-            <>
-              <Header />
-              <div className="page-fade">
-                <Gallery />
-                <Footer />
-              </div>
-            </>
-          }
-        />
+          {/* Media Pages */}
+          <Route
+            path="/news"
+            element={
+              <>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <News />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
+          <Route
+            path="/gallery"
+            element={
+              <>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <Gallery />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
 
-        {/* Product Page */}
-        <Route
-          path="/sunbird-straws"
-          element={
-            <>
-              <Header />
-              <div className="page-fade">
-                <SunbirdStraws />
-                <Footer />
-              </div>
-            </>
-          }
-        />
+          {/* Product Page */}
+          <Route
+            path="/sunbird-straws"
+            element={
+              <>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <SunbirdStraws />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
 
-        {/* Story Page */}
-        <Route
-          path="/our-story"
-          element={
-            <>
-              <Header />
-              <div className="page-fade">
-                <OurStory />
-                <Footer />
-              </div>
-            </>
-          }
-        />
+          {/* Story Page */}
+          <Route
+            path="/our-story"
+            element={
+              <>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <OurStory />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
 
-        {/* Our Team Page */}
-        <Route
-          path="/our-team"
-          element={
-            <>
-              <Header />
-              <div className="page-fade">
-                <OurTeam />
-                <Footer />
-              </div>
-            </>
-          }
-        />
+          {/* Our Team Page */}
+          <Route
+            path="/our-team"
+            element={
+              <>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <OurTeam />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
 
-        {/* Contact Us Page */}
-        <Route
-          path="/contact"
-          element={
-            <>
-              <Header />
-              <div className="page-fade">
-                <ContactUs />
-                <Footer />
-              </div>
-            </>
-          }
-        />
-      </Routes>
-    </Router>
+          {/* Contact Us Page */}
+          <Route
+            path="/contact"
+            element={
+              <>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <ContactUs />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
