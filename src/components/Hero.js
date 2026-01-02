@@ -2,41 +2,35 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Box, Typography, Button, Fade, Zoom } from "@mui/material";
 import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
-import SpaIcon from "@mui/icons-material/Spa";
-import GrassIcon from "@mui/icons-material/Grass";
 
 import slide1 from "../assets/landingpage.png";
 import slide2 from "../assets/GoGreen.jpeg";
 import slide3 from "../assets/imageforstatr.jpg";
 
+// Mascot images
+import JojoTurtle from "../assets/WhatsApp_Image_2025-12-29_at_20.38.43-removebg-preview.png";
+import JillBird from "../assets/WhatsApp_Image_2025-12-29_at_20.38.43__1_-removebg-preview.png";
+
 const slides = [
   {
     image: slide1,
-    heading: (
-      <>
-        World's First Premium Straws & Pens From{" "}
-        <Box component="span" sx={{ color: "#2e7d32", fontWeight: 700 }}>
-          coconut leaves
-        </Box>
-      </>
-    ),
+    heading: "World's First Premium Straws & Pens From",
+    highlight: "coconut leaves",
     subtext:
       "Innovative, sustainable and stylish alternatives to traditional plastics.",
     accentColor: "#f9a825",
   },
   {
     image: slide2,
-    heading: "Eco-Friendly Products That Make a Difference",
+    heading: "Eco-Friendly Products That Make a",
+    highlight: "Difference",
     subtext: "Join the movement toward conscious consumption and zero waste.",
     accentColor: "#66bb6a",
   },
   {
     image: slide3,
-    heading: (
-      <Box component="span" sx={{ color: "#5a3e2b", fontWeight: 700 }}>
-        Innovation Rooted in Nature
-      </Box>
-    ),
+    heading: "Innovation Rooted in",
+    highlight: "Nature",
     subtext:
       "Crafted with care, designed for impact — redefining everyday essentials.",
     accentColor: "#8d6e63",
@@ -53,22 +47,22 @@ function Hero() {
       setTimeout(() => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
         setAnimateIn(true);
-      }, 400);
+      }, 300);
     }, 8000);
     return () => clearInterval(interval);
   }, []);
 
-  const { image, heading, subtext, accentColor } = slides[currentSlide];
+  const { image, heading, highlight, subtext, accentColor } = slides[currentSlide];
 
   return (
     <Box
       component="section"
       sx={{
         width: "100%",
-        minHeight: { xs: "100vh", md: "100vh" },
+        minHeight: { xs: "auto", md: "100vh" },
         mt: 0,
-        pt: { xs: "100px", md: "140px" },
-        background: "linear-gradient(180deg, #fcf7f1 0%, #ffffff 30%, #fcf7f1 60%, #f5ebe0 100%)",
+        pt: { xs: "100px", md: "120px" },
+        background: "linear-gradient(180deg, #fcf7f1 0%, #ffffff 50%, #fcf7f1 100%)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -79,104 +73,6 @@ function Hero() {
         boxSizing: "border-box",
       }}
     >
-      {/* Decorative Background Elements */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          overflow: "hidden",
-          pointerEvents: "none",
-          zIndex: 0,
-        }}
-      >
-        {/* Large decorative circle - extends behind navbar */}
-        <Box
-          sx={{
-            position: "absolute",
-            top: { xs: "-15%", md: "-20%" },
-            right: { xs: "-20%", md: "0%" },
-            width: { xs: "90vw", md: "60vw" },
-            height: { xs: "90vw", md: "60vw" },
-            maxWidth: "900px",
-            maxHeight: "900px",
-            borderRadius: "50%",
-            background: `radial-gradient(circle, ${accentColor}25 0%, ${accentColor}10 50%, transparent 70%)`,
-            transition: "background 0.8s ease",
-          }}
-        />
-
-        {/* Floating leaf decorations */}
-        <Fade in={animateIn} timeout={1200}>
-          <Box
-            sx={{
-              position: "absolute",
-              top: { xs: "15%", md: "20%" },
-              right: { xs: "5%", md: "8%" },
-              opacity: 0.15,
-              transform: "rotate(25deg)",
-            }}
-          >
-            <SpaIcon sx={{ fontSize: { xs: 40, md: 60 }, color: "#2e7d32" }} />
-          </Box>
-        </Fade>
-
-        <Fade in={animateIn} timeout={1400}>
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: { xs: "20%", md: "25%" },
-              right: { xs: "15%", md: "35%" },
-              opacity: 0.12,
-              transform: "rotate(-15deg)",
-            }}
-          >
-            <GrassIcon sx={{ fontSize: { xs: 35, md: 50 }, color: "#8d6e63" }} />
-          </Box>
-        </Fade>
-
-        <Fade in={animateIn} timeout={1600}>
-          <Box
-            sx={{
-              position: "absolute",
-              top: { xs: "60%", md: "65%" },
-              left: { xs: "5%", md: "10%" },
-              opacity: 0.1,
-              transform: "rotate(45deg)",
-            }}
-          >
-            <LocalFloristIcon sx={{ fontSize: { xs: 30, md: 45 }, color: "#d3b69a" }} />
-          </Box>
-        </Fade>
-
-        {/* Subtle pattern dots */}
-        <Box
-          sx={{
-            position: "absolute",
-            top: "10%",
-            left: "5%",
-            display: { xs: "none", md: "grid" },
-            gridTemplateColumns: "repeat(5, 8px)",
-            gap: "12px",
-            opacity: 0.15,
-          }}
-        >
-          {[...Array(15)].map((_, i) => (
-            <Box
-              key={i}
-              sx={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                backgroundColor: "#d3b69a",
-              }}
-            />
-          ))}
-        </Box>
-      </Box>
-
       {/* Main Content Container */}
       <Box
         sx={{
@@ -195,7 +91,7 @@ function Hero() {
         }}
       >
         {/* Hero Content */}
-        <Fade in={animateIn} timeout={600}>
+        <Fade in={animateIn} timeout={500}>
           <Box
             sx={{
               flex: 1,
@@ -203,8 +99,10 @@ function Hero() {
               maxWidth: { xs: "100%", md: "50%" },
             }}
           >
+            {/* Heading */}
             <Typography
               variant="h1"
+              component="h1"
               sx={{
                 fontSize: { xs: "2rem", sm: "2.4rem", md: "3rem" },
                 fontWeight: 700,
@@ -214,8 +112,18 @@ function Hero() {
                 letterSpacing: "-0.02em",
               }}
             >
-              {heading}
+              {heading}{" "}
+              <Box
+                component="span"
+                sx={{
+                  color: "#2e7d32",
+                  fontWeight: 700,
+                }}
+              >
+                {highlight}
+              </Box>
             </Typography>
+
             <Typography
               variant="body1"
               sx={{
@@ -229,6 +137,7 @@ function Hero() {
               {subtext}
             </Typography>
 
+            {/* CTA Buttons */}
             <Box
               sx={{
                 display: "flex",
@@ -255,8 +164,8 @@ function Hero() {
                   transition: "all 0.3s ease",
                   "&:hover": {
                     backgroundColor: "primary.dark",
-                    transform: "translateY(-3px)",
-                    boxShadow: "0 8px 25px rgba(211, 182, 154, 0.5)",
+                    transform: "translateY(-2px)",
+                    boxShadow: "0 6px 25px rgba(211, 182, 154, 0.5)",
                   },
                 }}
               >
@@ -289,7 +198,7 @@ function Hero() {
               </Button>
             </Box>
 
-            {/* Trust indicators */}
+            {/* Trust Indicators */}
             <Box
               sx={{
                 display: "flex",
@@ -303,7 +212,7 @@ function Hero() {
                 flexWrap: "wrap",
               }}
             >
-              <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+              <Box sx={{ textAlign: "center" }}>
                 <Typography
                   sx={{
                     fontSize: "1.5rem",
@@ -332,7 +241,7 @@ function Hero() {
                   backgroundColor: "rgba(211, 182, 154, 0.4)",
                 }}
               />
-              <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+              <Box sx={{ textAlign: "center" }}>
                 <Typography
                   sx={{
                     fontSize: "1.5rem",
@@ -361,7 +270,7 @@ function Hero() {
                   backgroundColor: "rgba(211, 182, 154, 0.4)",
                 }}
               />
-              <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+              <Box sx={{ textAlign: "center" }}>
                 <Typography
                   sx={{
                     fontSize: "1.5rem",
@@ -387,147 +296,161 @@ function Hero() {
           </Box>
         </Fade>
 
-        {/* Hero Image */}
-        <Box
-          sx={{
-            flex: 1,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            position: "relative",
-            maxWidth: { xs: "100%", md: "50%" },
-          }}
-        >
-          {/* Image container with decorative background */}
+        {/* Right Side - Mascots with Banner */}
+        <Zoom in={animateIn} timeout={600}>
           <Box
             sx={{
-              position: "relative",
+              flex: 1,
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              position: "relative",
+              maxWidth: { xs: "100%", md: "50%" },
             }}
           >
-            {/* Circular background behind image */}
+            {/* Background Circle */}
             <Box
               sx={{
                 position: "absolute",
-                width: { xs: "280px", sm: "350px", md: "420px" },
-                height: { xs: "280px", sm: "350px", md: "420px" },
+                width: { xs: "320px", sm: "420px", md: "520px" },
+                height: { xs: "320px", sm: "420px", md: "520px" },
                 borderRadius: "50%",
-                background: `linear-gradient(135deg, ${accentColor} 0%, ${accentColor}dd 100%)`,
-                boxShadow: `0 20px 60px ${accentColor}40`,
-                transition: "all 0.8s ease",
+                background: `radial-gradient(circle, ${accentColor}20 0%, transparent 70%)`,
+                transition: "background 0.5s ease",
               }}
             />
 
-            {/* Secondary decorative ring */}
+            {/* Mascots Container */}
             <Box
               sx={{
-                position: "absolute",
-                width: { xs: "320px", sm: "400px", md: "480px" },
-                height: { xs: "320px", sm: "400px", md: "480px" },
-                borderRadius: "50%",
-                border: "2px dashed",
-                borderColor: `${accentColor}40`,
-                transition: "border-color 0.8s ease",
-                animation: "spin 30s linear infinite",
-                "@keyframes spin": {
-                  "0%": { transform: "rotate(0deg)" },
-                  "100%": { transform: "rotate(360deg)" },
-                },
+                position: "relative",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
               }}
-            />
-
-            {/* Product Image */}
-            <Zoom in={animateIn} timeout={800}>
-              <Box
-                component="img"
-                src={image}
-                alt="Hero Slide"
-                sx={{
-                  position: "relative",
-                  width: { xs: "260px", sm: "320px", md: "400px" },
-                  height: { xs: "260px", sm: "320px", md: "400px" },
-                  objectFit: "cover",
-                  borderRadius: "50%",
-                  zIndex: 2,
-                  filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.15))",
-                  transition: "transform 0.5s ease",
-                  "&:hover": {
-                    transform: "scale(1.05) rotate(2deg)",
-                  },
-                }}
-              />
-            </Zoom>
-
-            {/* Floating badge */}
-            <Fade in={animateIn} timeout={1200}>
+            >
+              {/* Mascots and Banner Row */}
               <Box
                 sx={{
-                  position: "absolute",
-                  bottom: { xs: "10%", md: "15%" },
-                  left: { xs: "-5%", md: "-10%" },
-                  backgroundColor: "#fff",
-                  borderRadius: "16px",
-                  px: 2,
-                  py: 1.5,
-                  boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
                   display: "flex",
-                  alignItems: "center",
-                  gap: 1,
-                  zIndex: 3,
+                  alignItems: "flex-end",
+                  justifyContent: "center",
                 }}
               >
-                <SpaIcon sx={{ color: "#2e7d32", fontSize: 24 }} />
-                <Box>
-                  <Typography
+                {/* Jojo the Turtle */}
+                <Box
+                  sx={{
+                    position: "relative",
+                    zIndex: 2,
+                    marginRight: { xs: "-25px", sm: "-40px", md: "-60px" },
+                    transition: "transform 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                    },
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={JojoTurtle}
+                    alt="Jojo the Turtle"
                     sx={{
-                      fontSize: "0.7rem",
-                      color: "text.secondary",
-                      lineHeight: 1,
+                      width: { xs: 140, sm: 200, md: 280 },
+                      height: "auto",
+                      filter: "drop-shadow(0 10px 25px rgba(0,0,0,0.18))",
+                    }}
+                  />
+                </Box>
+
+                {/* Banner */}
+                <Box
+                  sx={{
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      background: "linear-gradient(180deg, #c4956a 0%, #a67c52 100%)",
+                      borderRadius: "12px",
+                      padding: { xs: "14px 24px", sm: "18px 40px", md: "24px 55px" },
+                      boxShadow: "0 10px 35px rgba(141, 110, 99, 0.35)",
+                      border: "4px solid #8d6e63",
                     }}
                   >
-                    Made from
-                  </Typography>
-                  <Typography
+                    <Typography
+                      sx={{
+                        fontSize: { xs: "1.2rem", sm: "1.8rem", md: "2.4rem" },
+                        fontWeight: 700,
+                        color: "#fff",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.25)",
+                        fontFamily: "'Segoe UI', sans-serif",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      You are Strawesome!
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {/* Jill the Bird */}
+                <Box
+                  sx={{
+                    position: "relative",
+                    zIndex: 2,
+                    marginLeft: { xs: "-25px", sm: "-40px", md: "-60px" },
+                    transition: "transform 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                    },
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={JillBird}
+                    alt="Jill the Bird"
                     sx={{
-                      fontSize: "0.85rem",
-                      fontWeight: 700,
-                      color: "#2e7d32",
-                      lineHeight: 1.2,
+                      width: { xs: 120, sm: 175, md: 245 },
+                      height: "auto",
+                      filter: "drop-shadow(0 10px 25px rgba(0,0,0,0.18))",
                     }}
-                  >
-                    Coconut Leaves
-                  </Typography>
+                  />
                 </Box>
               </Box>
-            </Fade>
 
-            {/* Another floating element */}
-            <Fade in={animateIn} timeout={1400}>
+              {/* Name Tags */}
               <Box
                 sx={{
-                  position: "absolute",
-                  top: { xs: "5%", md: "10%" },
-                  right: { xs: "-5%", md: "-15%" },
-                  backgroundColor: "#fff",
-                  borderRadius: "50%",
-                  width: { xs: 50, md: 65 },
-                  height: { xs: 50, md: 65 },
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
                   display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  zIndex: 3,
+                  justifyContent: "space-between",
+                  width: "100%",
+                  maxWidth: { xs: "300px", sm: "420px", md: "540px" },
+                  mt: 2,
+                  px: 3,
                 }}
               >
-                <GrassIcon sx={{ color: "#8d6e63", fontSize: { xs: 24, md: 32 } }} />
+                <Typography
+                  sx={{
+                    fontSize: { xs: "0.85rem", md: "1rem" },
+                    fontWeight: 600,
+                    color: "#2e7d32",
+                  }}
+                >
+                  Jojo
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: { xs: "0.85rem", md: "1rem" },
+                    fontWeight: 600,
+                    color: "#e65100",
+                  }}
+                >
+                  Jill
+                </Typography>
               </Box>
-            </Fade>
+            </Box>
           </Box>
-        </Box>
+        </Zoom>
       </Box>
-
     </Box>
   );
 }
