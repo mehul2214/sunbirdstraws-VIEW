@@ -23,6 +23,9 @@ import SunbirdStraws from "./Pages/SunbirdStraws";
 import OurStory from "./Pages/OurStory";
 import OurTeam from "./Pages/OurTeam";
 import ContactUs from "./Pages/ContactUs";
+import Initiatives from "./Pages/Initiatives";
+// Import the Rural Women Empowerment page
+import RuralWomenEmpowerment from "./Pages/RuralWomenEmpowerment";
 
 function App() {
   return (
@@ -197,6 +200,38 @@ function App() {
                 <Fade in timeout={600}>
                   <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
                     <ContactUs />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
+
+          {/* Initiatives Page */}
+          <Route
+            path="/initiatives"
+            element={
+              <>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <Initiatives />
+                    <Footer />
+                  </Box>
+                </Fade>
+              </>
+            }
+          />
+
+          {/* Rural Women Empowerment Page */}
+          <Route
+            path="/rural-women-empowerment"
+            element={
+              <>
+                <Header />
+                <Fade in timeout={600}>
+                  <Box sx={{ position: 'relative', zIndex: 1, width: '100%' }}>
+                    <RuralWomenEmpowerment />
                     <Footer />
                   </Box>
                 </Fade>
