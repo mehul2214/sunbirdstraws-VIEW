@@ -79,7 +79,8 @@ function Header() {
 
   // Check if current path matches
   const isActive = (path) => location.pathname === path;
-  const isAboutActive = ["/our-story", "/our-team"].includes(location.pathname);
+  // Updated to include /initiatives
+  const isAboutActive = ["/our-story", "/our-team", "/initiatives"].includes(location.pathname);
   const isMediaActive = ["/news", "/gallery"].includes(location.pathname);
 
   const navLinkStyles = {
@@ -272,10 +273,17 @@ function Header() {
                 }}
               />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 5, py: 1.2 }}>
+            <ListItemButton 
+              sx={{ pl: 5, py: 1.2 }}
+              onClick={() => handleMobileNavClick("/initiatives")}
+            >
               <ListItemText
                 primary="Initiatives"
-                primaryTypographyProps={{ fontSize: "0.9rem", color: "text.secondary" }}
+                primaryTypographyProps={{ 
+                  fontSize: "0.9rem", 
+                  color: isActive("/initiatives") ? "primary.dark" : "text.secondary",
+                  fontWeight: isActive("/initiatives") ? 600 : 400,
+                }}
               />
             </ListItemButton>
             <ListItemButton sx={{ pl: 5, py: 1.2 }}>
@@ -444,7 +452,6 @@ function Header() {
             },
           }}
         >
-          {/* Logo Image with glow effect */}
           <Box
             sx={{
               position: "relative",
@@ -466,7 +473,6 @@ function Header() {
             />
           </Box>
 
-          {/* Brand Text (hidden on very small screens) */}
           <Box
             sx={{
               display: { xs: "none", sm: "flex" },
@@ -595,7 +601,16 @@ function Header() {
                     Our Team
                   </MenuItem>
                   <Divider sx={{ my: 0.5, borderColor: "rgba(211, 182, 154, 0.2)" }} />
-                  <MenuItem onClick={handleAboutClose} sx={menuItemStyles}>
+                  {/* Updated Initiatives Link */}
+                  <MenuItem 
+                    component={Link} 
+                    to="/initiatives" 
+                    onClick={handleAboutClose} 
+                    sx={{
+                      ...menuItemStyles,
+                      backgroundColor: isActive("/initiatives") ? "rgba(211, 182, 154, 0.15)" : "transparent",
+                    }}
+                  >
                     Initiatives
                   </MenuItem>
                   <MenuItem onClick={handleAboutClose} sx={menuItemStyles}>
@@ -686,7 +701,6 @@ function Header() {
               </Button>
             </Box>
 
-            {/* Explore Button */}
             <Button
               component={Link}
               to="/sunbird-straws"
