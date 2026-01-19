@@ -1,3 +1,12 @@
+/* Howdybun Font */
+@font-face {
+  font-family: 'Howdybun';
+  src: url('./assets/fonts/Howdybun-m2JM2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Basic resets - MUI CssBaseline handles most styling */
 * {
   margin: 0;

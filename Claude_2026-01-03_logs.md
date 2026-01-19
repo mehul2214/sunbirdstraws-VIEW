@@ -833,3 +833,407 @@ Bundle Size: 212.99 kB gzipped (+996 B from previous)
 **Status:** COMPLETED
 
 ---
+
+### Log Entry #4: Mascots Speaking Community Message
+
+**Task:** Redesign mascots section - Jill on left, Jojo on right, speaking together
+
+**Date/Time:** 2026-01-03
+
+---
+
+#### User Request
+
+Redesign the mascot section to:
+1. Position Jill (bird) on the LEFT side
+2. Position Jojo (turtle) on the RIGHT side
+3. Make both mascots bigger
+4. Create shared speech bubble with community message
+
+---
+
+#### Changes Made
+
+**File Modified:** `src/components/Hero.js`
+
+**Previous Design:**
+- Jojo on left, Jill on right
+- Holding a wooden "You are Strawesome!" board between them
+- Smaller mascot sizes (Jojo: 280px, Jill: 245px)
+
+**New Design:**
+- Jill on LEFT, Jojo on RIGHT
+- Shared speech bubble above both mascots
+- Larger mascot sizes (Jill: 280px, Jojo: 320px on desktop)
+- Two speech bubble tails pointing to each mascot
+
+---
+
+#### Speech Bubble Content
+
+```
+Together, we are
+
+#people against poverty     (green gradient)
+#people against pollution   (blue gradient)
+
+[Join the community today]
+```
+
+---
+
+#### Visual Design Details
+
+**Speech Bubble:**
+| Property | Value |
+|----------|-------|
+| Background | White to light beige gradient |
+| Border | 3px solid primary.main (#d3b69a) |
+| Border Radius | 24px |
+| Shadow | 0 15px 50px rgba(0,0,0,0.12) |
+| Min Width | 280px / 380px / 480px (xs/sm/md) |
+
+**Hashtag Styling:**
+| Hashtag | Gradient Colors |
+|---------|-----------------|
+| #people against poverty | #2e7d32 to #4caf50 (Green) |
+| #people against pollution | #1565c0 to #42a5f5 (Blue) |
+
+**CTA Button:**
+| Property | Value |
+|----------|-------|
+| Background | Bronze gradient (#a67c52 to #d3b69a) |
+| Border Radius | 30px (pill shape) |
+| Animation | Pulsing shadow glow |
+
+**Mascot Name Tags:**
+| Mascot | Color Gradient |
+|--------|----------------|
+| Jill | Orange (#ff9800 to #e65100) |
+| Jojo | Green (#4caf50 to #2e7d32) |
+
+---
+
+#### Responsive Sizing
+
+| Element | Mobile (xs) | Tablet (sm) | Desktop (md) |
+|---------|-------------|-------------|--------------|
+| Jill | 140px | 200px | 280px |
+| Jojo | 160px | 230px | 320px |
+| Bubble padding | 20px 28px | 28px 40px | 32px 50px |
+| Hashtag font | 1.3rem | 1.7rem | 2rem |
+| CTA font | 0.95rem | 1.1rem | 1.25rem |
+
+---
+
+#### Animations Added
+
+| Keyframe | Duration | Description |
+|----------|----------|-------------|
+| mascotGroupFloat | 4s | Entire section floats gently |
+| bubblePop | 0.6s | Speech bubble pops in on load |
+| jillBounce | 3s | Jill gentle bounce with rotation |
+| jojoBounce | 3s | Jojo gentle bounce (0.5s delay) |
+| ctaPulse | 2s | CTA button shadow pulse |
+| handWave | 1s | Waving hand emoji rotation |
+| sparkleFloat | 2s | Decorative emojis float |
+
+---
+
+#### Decorative Elements
+
+| Emoji | Position | Animation Delay |
+|-------|----------|-----------------|
+| Sparkle | Top-right of bubble | 0s |
+| Leaf | Top-left of bubble | 0.3s |
+| Green Heart | Bottom-right of bubble | 0.6s |
+
+---
+
+#### Build Results
+
+```
+Build Status: Compiled successfully
+Bundle Size: 210.2 kB gzipped (-2.79 kB from previous)
+```
+
+Note: Bundle size decreased because the new implementation is more efficient than the previous wooden board design.
+
+---
+
+**Status:** COMPLETED
+
+---
+
+### Log Entry #5: Simplify Hero Section - Remove Mascots
+
+**Task:** Remove mascots completely and make text content full-width centered
+
+**Date/Time:** 2026-01-03
+
+---
+
+#### User Request
+
+- Remove the mascots and speech bubble section completely
+- Make the text content take up the whole section
+- Keep it simple - no fancy animations or decorations
+
+---
+
+#### Changes Made
+
+**File Modified:** `src/components/Hero.js`
+
+**Removed:**
+- Mascot images (Jojo turtle, Jill bird)
+- Speech bubble with community message
+- All fancy animations (bounce, float, pulse, wave, sparkle)
+- Background decorative circles
+- Mascot image imports
+- Zoom component import
+- Slide images and accent colors from slides array
+
+**Simplified Layout:**
+- Full-width centered content (max-width: 800px)
+- Simple beige background (#fcf7f1)
+- Clean typography with green highlight
+- Two CTA buttons centered horizontally
+- Trust indicators in a row with dividers
+
+---
+
+#### Code Reduction
+
+| Metric | Before | After | Change |
+|--------|--------|-------|--------|
+| Total Lines | 640 | 260 | -380 lines (-60%) |
+| Imports | 6 | 4 | -2 |
+| Animations | 7+ keyframes | 0 | Removed all |
+| Components | Fade + Zoom | Fade only | Simplified |
+
+---
+
+#### New Hero Structure
+
+```
+┌─────────────────────────────────────────┐
+│                                         │
+│     [Heading] with green highlight      │
+│                                         │
+│           [Subtext paragraph]           │
+│                                         │
+│   [Explore Products]  [Our Story]       │
+│                                         │
+│  ─────────────────────────────────────  │
+│                                         │
+│   25+    │    20M+    │    100%         │
+│ COUNTRIES│ STRAWS SOLD│ BIODEGRADABLE   │
+│                                         │
+└─────────────────────────────────────────┘
+```
+
+---
+
+#### Styling Details
+
+| Property | Value |
+|----------|-------|
+| Background | Solid #fcf7f1 |
+| Max Width | 800px |
+| Padding Top | 120px (mobile) / 160px (desktop) |
+| Padding Bottom | 64px (mobile) / 96px (desktop) |
+| Heading Size | 2rem / 2.5rem / 3.2rem |
+| Button Style | 8px border-radius, no shadows |
+| Transition | Simple 500ms fade |
+
+---
+
+#### Build Results
+
+```
+Build Status: Compiled successfully
+Bundle Size: 208.74 kB gzipped (-1.46 kB from previous)
+```
+
+---
+
+**Status:** COMPLETED
+
+---
+
+### Log Entry #6: Hero with Mascots and Community Message
+
+**Task:** Replace Hero with simple layout - Jill (left) | Message (center) | Jojo (right)
+
+**Date/Time:** 2026-01-03
+
+---
+
+#### User Request
+
+- Remove current Hero content (heading, subtext, buttons, trust indicators)
+- Add Jill mascot on the LEFT
+- Add Jojo mascot on the RIGHT
+- Put community message in the CENTER
+- Keep it simple - no fancy animations
+- No CTA buttons
+
+---
+
+#### User Preferences
+
+| Question | Answer |
+|----------|--------|
+| Placement | Replace Hero completely |
+| CTA Button | No button - just text message |
+
+---
+
+#### New Layout
+
+```
+┌──────────────────────────────────────────────────────┐
+│                                                      │
+│   [Jill]         Together, we are           [Jojo]   │
+│    🐦                                         🐢     │
+│              #people against poverty                 │
+│              #people against pollution               │
+│                                                      │
+│              Join the community today                │
+│                                                      │
+└──────────────────────────────────────────────────────┘
+```
+
+**Mobile Layout:** Message on top, then Jill, then Jojo (stacked vertically)
+
+---
+
+#### Implementation Details
+
+**File Modified:** `src/components/Hero.js`
+
+| Element | Desktop Size | Mobile Size |
+|---------|--------------|-------------|
+| Jill | 200px | 120px |
+| Jojo | 220px | 140px |
+| Hashtags | 2.5rem | 1.5rem |
+| "Together" text | 1.5rem | 1.1rem |
+| "Join" text | 1.25rem | 1rem |
+
+**Colors:**
+- #people against poverty: Green (#2e7d32)
+- #people against pollution: Blue (#1565c0)
+- Jill name: Orange (#e65100)
+- Jojo name: Green (#2e7d32)
+
+---
+
+#### Code Stats
+
+| Metric | Value |
+|--------|-------|
+| Total Lines | 154 |
+| Imports | 2 (React, MUI) |
+| Animations | 0 |
+| State/Effects | 0 |
+
+---
+
+#### Build Results
+
+```
+Build Status: Compiled successfully
+Bundle Size: 208.42 kB gzipped (-320 B from previous)
+```
+
+---
+
+**Status:** COMPLETED
+
+---
+
+### Log Entry #7: Increase Mascot Sizes
+
+**Task:** Make mascots bigger
+
+**Date/Time:** 2026-01-03
+
+---
+
+#### Changes Made
+
+**File Modified:** `src/components/Hero.js`
+
+| Mascot | Before (xs/sm/md) | After (xs/sm/md) |
+|--------|-------------------|------------------|
+| Jill | 120px / 160px / 200px | 180px / 250px / 320px |
+| Jojo | 140px / 180px / 220px | 200px / 280px / 360px |
+
+---
+
+#### Build Results
+
+```
+Build Status: Compiled successfully
+Bundle Size: 208.42 kB gzipped (no change)
+```
+
+---
+
+**Status:** COMPLETED
+
+---
+
+### Log Entry #8: Add Howdybun Font to Hero Section
+
+**Task:** Apply custom Howdybun font to Hero section text
+
+**Date/Time:** 2026-01-03
+
+---
+
+#### User Preference
+
+| Question | Answer |
+|----------|--------|
+| Apply font to | Hero section only |
+
+---
+
+#### Changes Made
+
+**1. Font Setup:**
+- Extracted `Howdybun-m2JM2.ttf` from zip file
+- Created `src/assets/fonts/` directory
+- Added @font-face declaration in `src/index.css`
+
+**2. Applied to Hero Section:**
+
+| Text Element | Font Size (xs/sm/md) |
+|--------------|---------------------|
+| "Together, we are" | 1.3rem / 1.6rem / 2rem |
+| "#people against poverty" | 1.8rem / 2.5rem / 3.2rem |
+| "#people against pollution" | 1.8rem / 2.5rem / 3.2rem |
+| "Join the community today" | 1.2rem / 1.4rem / 1.6rem |
+
+**Files Modified:**
+- `src/index.css` - Added @font-face
+- `src/components/Hero.js` - Applied fontFamily to text
+- `src/assets/fonts/Howdybun-m2JM2.ttf` - New file
+
+---
+
+#### Build Results
+
+```
+Build Status: Compiled successfully
+Bundle Size: 208.44 kB gzipped (+21 B)
+CSS Size: 240 B (+109 B for @font-face)
+```
+
+---
+
+**Status:** COMPLETED
+
+---
