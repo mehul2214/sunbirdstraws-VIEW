@@ -21,10 +21,10 @@ const RuralWomenEmpowerment = () => {
     <Box sx={{ bgcolor: '#ffffff', minHeight: '100vh', color: '#000000', pb: 10 }}>
       
       {/* 1. HERO SECTION */}
-      <Box sx={{ pt: 8, pb: 4 }}>
+      <Box sx={{ pt: { xs: 14, md: 16 }, pb: 4 }}>
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center', mb: 6 }}>
-            <Typography variant="h3" sx={{ fontWeight: 800, mb: 1 }}>
+            <Typography variant="h3" sx={{ fontWeight: 800, mb: 3 }}>
               Rural Women Empowerment
             </Typography>
             <Typography variant="h6" sx={{ fontWeight: 500, color: '#913175', letterSpacing: 1 }}>

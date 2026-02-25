@@ -69,12 +69,12 @@ const Initiatives = () => {
     <Box sx={{ bgcolor: '#913175', minHeight: '100vh', color: '#ffffff', pb: 0 }}>
 
       {/* 1. PURPLE PARITY PLEDGE SECTION */}
-      <Container maxWidth="lg" sx={{ py: 10 }}>
+      <Container maxWidth="lg" sx={{ py: 10, pt: { xs: 14, md: 16 } }}>
         <Box sx={{ textAlign: 'center', mb: 6 }}>
-          <Typography variant="h3" sx={{ fontWeight: 700, color: '#fff' }}>
+          <Typography variant="h1" sx={{ fontWeight: 700, color: '#fff', fontSize: { xs: '2.4rem', md: '3.2rem' } }}>
             Purple Parity Pledge
           </Typography>
-          <Typography variant="h6" sx={{ mt: 2, fontWeight: 500, color: '#fff' }}>
+          <Typography variant="h4" sx={{ mt: 4, fontWeight: 500, color: '#fff' }}>
             About Our Initiative
           </Typography>
         </Box>
@@ -157,10 +157,10 @@ const Initiatives = () => {
 
       {/* 3. GIVING BACK TO SOCIETY SECTION */}
       <Container maxWidth="lg" sx={{ textAlign: 'center', pb: 8 }}>
-        <Typography variant="h4" sx={{ fontWeight: 600, mb: 3, color: '#ffffff' }}>
+        <Typography variant="h2" sx={{ fontWeight: 700, mb: 2, color: '#ffffff', fontSize: { xs: '1.6rem', md: '2.2rem' } }}>
           Giving Back to Society
         </Typography>
-        <Typography sx={{ fontSize: '1.15rem', mb: 2, color: '#ffffff', fontWeight: 400 }}>
+        <Typography variant="h5" sx={{ mb: 3, color: '#ffffff', fontWeight: 400, fontSize: { xs: '0.95rem', md: '1.1rem' } }}>
           Real change begins with participation.
         </Typography>
         
@@ -177,13 +177,13 @@ const Initiatives = () => {
             </Typography>
         </Box>
 
-        <Typography sx={{ fontSize: '1.15rem', fontWeight: 600, mb: 4, color: '#ffffff' }}>
+        <Typography sx={{ fontSize: '1.15rem', fontWeight: 600, mb: 4, mt: 12, color: '#ffffff' }}>
           Glimpse of Activity Conducted
         </Typography>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3, maxWidth: '800px', mx: 'auto', mb: 4 }}>
-          <Box component="img" src={GivingBack1} sx={{ width: '45%', height: '220px', objectFit: 'cover', borderRadius: '4px' }} />
-          <Box component="img" src={GivingBack2} sx={{ width: '45%', height: '220px', objectFit: 'cover', borderRadius: '4px' }} />
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3, maxWidth: '1100px', mx: 'auto', mb: 4 }}>
+          <Box component="img" src={GivingBack1} sx={{ width: '48%', height: '380px', objectFit: 'cover', borderRadius: '4px' }} />
+          <Box component="img" src={GivingBack2} sx={{ width: '48%', height: '380px', objectFit: 'cover', borderRadius: '4px' }} />
         </Box>
 
         <Box sx={{ maxWidth: '800px', mx: 'auto', mt: 2 }}>
@@ -227,25 +227,18 @@ const Initiatives = () => {
           <Grid container spacing={6} alignItems="center">
 
             {/* LEFT IMAGE CARD */}
-            <Grid item xs={12} md={5}>
+            <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <Box
+                component="img"
+                src={ReadyToMakeImpactImg}
                 sx={{
-                  bgcolor: '#ffffff',
-                  p: 3,
+                  width: '100%',
+                  maxWidth: '380px',
+                  height: 'auto',
+                  display: 'block',
                   borderRadius: 2,
-                  display: 'inline-block'
                 }}
-              >
-                <Box
-                  component="img"
-                  src={ReadyToMakeImpactImg}
-                  sx={{
-                    width: '100%',
-                    maxWidth: '280px',
-                    display: 'block'
-                  }}
-                />
-              </Box>
+              />
             </Grid>
 
             {/* RIGHT CONTENT */}

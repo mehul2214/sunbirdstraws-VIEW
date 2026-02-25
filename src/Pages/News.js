@@ -112,19 +112,6 @@ function News() {
             <Grid size={{ xs: 12, md: 6 }}>
               <Fade in timeout={800}>
                 <Box>
-                  {/* Accent Text */}
-                  <Typography
-                    sx={{
-                      color: "secondary.main",
-                      fontWeight: 600,
-                      fontSize: "1rem",
-                      mb: 1,
-                      letterSpacing: "0.5px",
-                    }}
-                  >
-                    Media Coverage
-                  </Typography>
-
                   {/* Main Heading */}
                   <Typography
                     variant="h1"
@@ -136,7 +123,7 @@ function News() {
                       lineHeight: 1.2,
                     }}
                   >
-                    Sunbird in the News
+                    Media Coverage
                   </Typography>
 
                   {/* Subtitle */}
@@ -149,8 +136,7 @@ function News() {
                       maxWidth: "500px",
                     }}
                   >
-                    Explore how Sunbird is making headlines across the globe. From Forbes
-                    to The Hindu, our story of sustainable innovation continues to inspire.
+                    Explore how Sunbird Straws is making headlines across the globe — from Forbes to The Hindu, our story of sustainable innovation continues to inspire.
                   </Typography>
 
                   {/* Stats Row */}
@@ -239,7 +225,7 @@ function News() {
                         },
                       }}
                     >
-                      Press Contact
+                      Contact Us
                     </Button>
                   </Box>
                 </Box>

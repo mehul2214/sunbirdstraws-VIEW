@@ -116,24 +116,7 @@ function Inspiration() {
             },
           }}
         >
-          <Typography
-            sx={{
-              fontSize: "0.9rem",
-              fontWeight: 600,
-              color: "secondary.main",
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              mb: 1,
-              animation: isInView ? "popIn 0.5s ease-out 0.2s both" : "none",
-              "@keyframes popIn": {
-                "0%": { opacity: 0, transform: "scale(0.5)" },
-                "70%": { transform: "scale(1.1)" },
-                "100%": { opacity: 1, transform: "scale(1)" },
-              },
-            }}
-          >
-            Why We Do It
-          </Typography>
+
           <Typography
             variant="h2"
             sx={{
@@ -218,44 +201,6 @@ function Inspiration() {
                 }}
               />
 
-              {/* Floating badge on image */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 20,
-                  right: -15,
-                  backgroundColor: "#fff",
-                  borderRadius: "16px",
-                  px: 2,
-                  py: 1.5,
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 1,
-                  animation: isInView ? "bounceIn 0.6s ease-out 0.8s both" : "none",
-                  "@keyframes bounceIn": {
-                    "0%": { opacity: 0, transform: "scale(0.3) translateY(20px)" },
-                    "50%": { transform: "scale(1.1) translateY(-5px)" },
-                    "100%": { opacity: 1, transform: "scale(1) translateY(0)" },
-                  },
-                }}
-              >
-                <SpaIcon
-                  sx={{
-                    color: "#2e7d32",
-                    fontSize: 20,
-                    animation: imageHovered ? "wiggle 0.5s ease" : "none",
-                    "@keyframes wiggle": {
-                      "0%, 100%": { transform: "rotate(0deg)" },
-                      "25%": { transform: "rotate(-10deg)" },
-                      "75%": { transform: "rotate(10deg)" },
-                    },
-                  }}
-                />
-                <Typography sx={{ fontSize: "0.85rem", fontWeight: 600, color: "#2e7d32" }}>
-                  Eco-Friendly
-                </Typography>
-              </Box>
             </Box>
           </Box>
 
