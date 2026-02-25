@@ -6,12 +6,10 @@ import {
   Button,
   Grid,
   Fade,
-  Zoom,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import {
   Spa as SpaIcon,
-  EmojiNature as LeafIcon,
   Public as GlobeIcon,
   Groups as PeopleIcon,
   EnergySavingsLeaf as EcoIcon,

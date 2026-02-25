@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Box, Container, Typography } from "@mui/material";
-import HandshakeIcon from "@mui/icons-material/Handshake";
 
 // Import logos
 import ChristLogo from "../assets/Supported by/ChristBangalore.png";

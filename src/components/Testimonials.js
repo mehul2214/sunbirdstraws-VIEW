@@ -3,7 +3,6 @@ import { Box, Container, Typography, IconButton, Card } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import StarIcon from "@mui/icons-material/Star";
 
 import LeelaLogo from "../assets/Testimonals/TheLeelaPalaceHotels.png";
 import GrandMercureLogo from "../assets/Testimonals/GrandMercure.png";
