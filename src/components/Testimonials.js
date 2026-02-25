@@ -3,7 +3,6 @@ import { Box, Container, Typography, IconButton, Card } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import StarIcon from "@mui/icons-material/Star";
 
 import LeelaLogo from "../assets/Testimonals/TheLeelaPalaceHotels.png";
 import GrandMercureLogo from "../assets/Testimonals/GrandMercure.png";
@@ -151,30 +150,7 @@ const TestimonialCard = ({ item, index, isActive }) => {
       />
 
       {/* Stars */}
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          gap: 0.5,
-          mb: 2,
-        }}
-      >
-        {[...Array(item.rating)].map((_, i) => (
-          <StarIcon
-            key={i}
-            sx={{
-              color: "#f9a825",
-              fontSize: 18,
-              animation: isHovered ? `starPop 0.3s ease-out ${i * 0.1}s both` : "none",
-              "@keyframes starPop": {
-                "0%": { transform: "scale(1)" },
-                "50%": { transform: "scale(1.3)" },
-                "100%": { transform: "scale(1)" },
-              },
-            }}
-          />
-        ))}
-      </Box>
+
 
       {/* Quote */}
       <Typography
@@ -327,39 +303,7 @@ function Testimonials() {
             },
           }}
         >
-          <Box
-            sx={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 1,
-              mb: 1,
-              animation: isInView ? "iconPop 0.6s ease-out 0.2s both" : "none",
-              "@keyframes iconPop": {
-                "0%": { opacity: 0, transform: "scale(0.5)" },
-                "50%": { transform: "scale(1.15)" },
-                "100%": { opacity: 1, transform: "scale(1)" },
-              },
-            }}
-          >
-            <FormatQuoteIcon
-              sx={{
-                color: "secondary.main",
-                fontSize: 28,
-                transform: "scaleX(-1)",
-              }}
-            />
-            <Typography
-              sx={{
-                fontSize: "0.9rem",
-                fontWeight: 600,
-                color: "secondary.main",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-              }}
-            >
-              What They Say
-            </Typography>
-          </Box>
+
           <Typography
             variant="h2"
             sx={{

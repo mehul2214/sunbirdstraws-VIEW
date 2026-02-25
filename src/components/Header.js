@@ -17,7 +17,6 @@ import {
   useMediaQuery,
   useTheme,
   Typography,
-  Divider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -81,7 +80,7 @@ function Header() {
   const isActive = (path) => location.pathname === path;
   // Updated to include /initiatives
   const isAboutActive = ["/our-story", "/our-team", "/initiatives"].includes(location.pathname);
-  const isMediaActive = ["/news", "/gallery"].includes(location.pathname);
+  const isMediaActive = ["/news"].includes(location.pathname);
 
   const navLinkStyles = {
     fontSize: "0.95rem",
@@ -286,12 +285,7 @@ function Header() {
                 }}
               />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 5, py: 1.2 }}>
-              <ListItemText
-                primary="Blog"
-                primaryTypographyProps={{ fontSize: "0.9rem", color: "text.secondary" }}
-              />
-            </ListItemButton>
+
           </List>
         </Collapse>
 
@@ -339,19 +333,7 @@ function Header() {
                 }}
               />
             </ListItemButton>
-            <ListItemButton
-              sx={{ pl: 5, py: 1.2 }}
-              onClick={() => handleMobileNavClick("/gallery")}
-            >
-              <ListItemText
-                primary="Gallery"
-                primaryTypographyProps={{
-                  fontSize: "0.9rem",
-                  color: isActive("/gallery") ? "primary.dark" : "text.secondary",
-                  fontWeight: isActive("/gallery") ? 600 : 400,
-                }}
-              />
-            </ListItemButton>
+
           </List>
         </Collapse>
 
@@ -473,36 +455,7 @@ function Header() {
             />
           </Box>
 
-          <Box
-            sx={{
-              display: { xs: "none", sm: "flex" },
-              flexDirection: "column",
-              alignItems: "flex-start",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: { sm: "1.1rem", md: "1.3rem" },
-                fontWeight: 700,
-                color: "text.primary",
-                lineHeight: 1.2,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Sunbird Straws
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: "0.7rem",
-                fontWeight: 500,
-                color: "primary.main",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-              }}
-            >
-              Eco-Friendly Living
-            </Typography>
-          </Box>
+
         </Box>
 
         {/* Desktop Navigation */}
@@ -600,8 +553,7 @@ function Header() {
                   >
                     Our Team
                   </MenuItem>
-                  <Divider sx={{ my: 0.5, borderColor: "rgba(211, 182, 154, 0.2)" }} />
-                  {/* Updated Initiatives Link */}
+                  {/* Initiatives Link */}
                   <MenuItem 
                     component={Link} 
                     to="/initiatives" 
@@ -613,9 +565,7 @@ function Header() {
                   >
                     Initiatives
                   </MenuItem>
-                  <MenuItem onClick={handleAboutClose} sx={menuItemStyles}>
-                    Blog
-                  </MenuItem>
+
                 </Menu>
               </Box>
 
@@ -678,17 +628,7 @@ function Header() {
                   >
                     News
                   </MenuItem>
-                  <MenuItem
-                    component={Link}
-                    to="/gallery"
-                    onClick={handleMediaClose}
-                    sx={{
-                      ...menuItemStyles,
-                      backgroundColor: isActive("/gallery") ? "rgba(211, 182, 154, 0.15)" : "transparent",
-                    }}
-                  >
-                    Gallery
-                  </MenuItem>
+
                 </Menu>
               </Box>
 

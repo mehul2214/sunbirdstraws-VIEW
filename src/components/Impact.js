@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Box, Container, Typography } from "@mui/material";
-import strawIcon from "../assets/ImpactSection/Strawsicon.jpg";
-import co2Icon from "../assets/ImpactSection/co2emission.jpg";
-import womenIcon from "../assets/ImpactSection/ruralwomengraphic.webp";
+import strawIcon from "../assets/ImpactSection/Strawsicon-Photoroom.png";
+import co2Icon from "../assets/ImpactSection/co2emission-Photoroom.png";
+import womenIcon from "../assets/ImpactSection/ruralwomengraphic-Photoroom.png";
 
 const impactData = [
   {
@@ -163,7 +163,7 @@ const ImpactCard = ({ item, index, isInView }) => {
           width: "100%",
           py: 3,
           px: 2,
-          backgroundColor: "#faf7f4",
+          background: "linear-gradient(180deg, #f5ebe0 0%, #ffffff 100%)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -193,8 +193,9 @@ const ImpactCard = ({ item, index, isInView }) => {
           src={item.icon}
           alt={item.text}
           sx={{
-            width: { xs: 90, md: 100 },
-            height: { xs: 90, md: 100 },
+            width: { xs: 130, md: 150 },
+            height: { xs: 130, md: 150 },
+            transform: index === 1 ? "scale(1.35)" : "none",
             objectFit: "contain",
             transition: "transform 0.3s ease",
             animation: isHovered ? "iconBounce 0.6s ease" : "none",
@@ -249,7 +250,7 @@ const ImpactCard = ({ item, index, isInView }) => {
           sx={{
             fontSize: { xs: "2rem", md: "2.2rem" },
             fontWeight: 700,
-            color: item.color,
+            color: "#1a1a1a",
             mb: 0.5,
             animation: isInView
               ? `numberPop 0.5s ease-out ${index * 0.15 + 0.3}s both`
@@ -337,24 +338,6 @@ function Impact() {
             },
           }}
         >
-          <Typography
-            sx={{
-              fontSize: "0.9rem",
-              fontWeight: 600,
-              color: "secondary.main",
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              mb: 1,
-              animation: isInView ? "bounceIn 0.6s ease-out 0.2s both" : "none",
-              "@keyframes bounceIn": {
-                "0%": { opacity: 0, transform: "scale(0.5)" },
-                "50%": { transform: "scale(1.1)" },
-                "100%": { opacity: 1, transform: "scale(1)" },
-              },
-            }}
-          >
-            Our Impact
-          </Typography>
           <Typography
             variant="h2"
             sx={{

@@ -6,12 +6,10 @@ import {
   Button,
   Grid,
   Fade,
-  Zoom,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import {
   Spa as SpaIcon,
-  EmojiNature as LeafIcon,
   Public as GlobeIcon,
   Groups as PeopleIcon,
   EnergySavingsLeaf as EcoIcon,
@@ -27,247 +25,75 @@ import mapImage from "../assets/OurStory/mapfromglobalshift.png";
 function OurStory() {
   return (
     <Box component="section" sx={{ lineHeight: 1.6 }}>
-      {/* HERO SECTION - Split Layout */}
+      {/* HERO SECTION - Full Width Image Overlay */}
       <Box
         sx={{
-          background: "linear-gradient(180deg, #fcf7f1 0%, #ffffff 50%, #f5ebe0 100%)",
-          pt: { xs: "100px", md: "120px" },
-          pb: { xs: 6, md: 8 },
-          px: { xs: 2, md: 4 },
           position: "relative",
+          width: "100%",
+          height: { xs: "420px", sm: "520px", md: "620px" },
+          mt: { xs: "64px", md: "80px" },
           overflow: "hidden",
         }}
       >
-        <Container maxWidth="lg">
-          <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
-            {/* Left Side - Content */}
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Fade in timeout={800}>
-                <Box>
-                  {/* Accent Text */}
-                  <Typography
-                    sx={{
-                      color: "secondary.main",
-                      fontWeight: 600,
-                      fontSize: "1rem",
-                      mb: 1,
-                      letterSpacing: "0.5px",
-                    }}
-                  >
-                    Our Journey
-                  </Typography>
-
-                  {/* Main Heading */}
-                  <Typography
-                    variant="h1"
-                    sx={{
-                      fontSize: { xs: "2.2rem", sm: "2.8rem", md: "3.2rem" },
-                      fontWeight: 700,
-                      color: "text.primary",
-                      mb: 2,
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    It All Began With Something Simple
-                  </Typography>
-
-                  {/* Subtitle */}
-                  <Typography
-                    sx={{
-                      color: "text.secondary",
-                      fontSize: { xs: "1rem", md: "1.15rem" },
-                      mb: 3,
-                      lineHeight: 1.7,
-                      maxWidth: "500px",
-                    }}
-                  >
-                    A straw. Something small we use every day, yet one that leaves
-                    behind long-lasting environmental impact. We believed there had
-                    to be a better way.
-                  </Typography>
-
-                  {/* CTA Buttons */}
-                  <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
-                    <Button
-                      component={Link}
-                      to="/sunbird-straws"
-                      variant="contained"
-                      endIcon={<ArrowIcon />}
-                      sx={{
-                        py: 1.5,
-                        px: 3,
-                        backgroundColor: "primary.main",
-                        color: "text.primary",
-                        fontWeight: 600,
-                        borderRadius: "8px",
-                        fontSize: "1rem",
-                        textTransform: "none",
-                        boxShadow: "0 4px 14px rgba(211, 182, 154, 0.4)",
-                        transition: "all 0.3s ease",
-                        "&:hover": {
-                          backgroundColor: "primary.dark",
-                          transform: "translateY(-2px)",
-                          boxShadow: "0 6px 20px rgba(211, 182, 154, 0.5)",
-                        },
-                      }}
-                    >
-                      Our Products
-                    </Button>
-                    <Button
-                      component={Link}
-                      to="/contact"
-                      variant="outlined"
-                      sx={{
-                        py: 1.5,
-                        px: 3,
-                        borderColor: "primary.main",
-                        color: "text.primary",
-                        fontWeight: 600,
-                        borderRadius: "8px",
-                        fontSize: "1rem",
-                        textTransform: "none",
-                        borderWidth: "2px",
-                        transition: "all 0.3s ease",
-                        "&:hover": {
-                          borderColor: "primary.dark",
-                          backgroundColor: "rgba(211, 182, 154, 0.1)",
-                          borderWidth: "2px",
-                        },
-                      }}
-                    >
-                      Get in Touch
-                    </Button>
-                  </Box>
-                </Box>
-              </Fade>
-            </Grid>
-
-            {/* Right Side - Image with Card Background */}
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Zoom in timeout={1000}>
-                <Box
-                  sx={{
-                    position: "relative",
-                    width: { xs: "300px", sm: "380px", md: "450px" },
-                    height: { xs: "320px", sm: "400px", md: "470px" },
-                    mx: "auto",
-                  }}
-                >
-                  {/* Background Card - Rotated */}
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      top: "5%",
-                      left: "5%",
-                      width: "92%",
-                      height: "92%",
-                      borderRadius: "24px",
-                      background: "linear-gradient(145deg, #f5ebe0 0%, #e8d4c3 100%)",
-                      boxShadow: "0 20px 60px rgba(166, 124, 82, 0.25), 0 8px 24px rgba(0, 0, 0, 0.1)",
-                      transform: "rotate(-3deg)",
-                    }}
-                  />
-
-                  {/* Image Card - Main */}
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      top: "2%",
-                      left: "2%",
-                      width: "92%",
-                      height: "92%",
-                      borderRadius: "24px",
-                      overflow: "hidden",
-                      boxShadow: "0 15px 50px rgba(166, 124, 82, 0.3), 0 5px 15px rgba(0, 0, 0, 0.1)",
-                      border: "5px solid #fff",
-                      zIndex: 2,
-                      transition: "transform 0.3s ease",
-                      "&:hover": {
-                        transform: "scale(1.02)",
-                      },
-                    }}
-                  >
-                    <Box
-                      component="img"
-                      src={heroImage}
-                      alt="Sunbird Story"
-                      sx={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        transition: "transform 0.5s ease",
-                        "&:hover": {
-                          transform: "scale(1.05)",
-                        },
-                      }}
-                    />
-                  </Box>
-
-                  {/* Floating Icons */}
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      top: "-5%",
-                      right: "5%",
-                      zIndex: 3,
-                      backgroundColor: "#fff",
-                      borderRadius: "50%",
-                      p: 1.5,
-                      boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
-                      animation: "floatIcon 4s ease-in-out infinite",
-                      "@keyframes floatIcon": {
-                        "0%, 100%": { transform: "translateY(0)" },
-                        "50%": { transform: "translateY(-10px)" },
-                      },
-                    }}
-                  >
-                    <SpaIcon sx={{ fontSize: "28px", color: "secondary.main" }} />
-                  </Box>
-
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      bottom: "0%",
-                      left: "-3%",
-                      zIndex: 3,
-                      backgroundColor: "#fff",
-                      borderRadius: "50%",
-                      p: 1.2,
-                      boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
-                      animation: "floatIcon2 5s ease-in-out infinite",
-                      "@keyframes floatIcon2": {
-                        "0%, 100%": { transform: "translateY(0)" },
-                        "50%": { transform: "translateY(-8px)" },
-                      },
-                    }}
-                  >
-                    <LeafIcon sx={{ fontSize: "24px", color: "primary.main" }} />
-                  </Box>
-
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      top: "25%",
-                      left: "-5%",
-                      zIndex: 3,
-                      backgroundColor: "#fff",
-                      borderRadius: "50%",
-                      p: 1,
-                      boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
-                      animation: "floatIcon3 6s ease-in-out infinite",
-                      "@keyframes floatIcon3": {
-                        "0%, 100%": { transform: "translateY(0)" },
-                        "50%": { transform: "translateY(-6px)" },
-                      },
-                    }}
-                  >
-                    <EcoIcon sx={{ fontSize: "20px", color: "success.main" }} />
-                  </Box>
-                </Box>
-              </Zoom>
-            </Grid>
-          </Grid>
-        </Container>
+        {/* Background Image */}
+        <Box
+          component="img"
+          src={heroImage}
+          alt="Our Story"
+          sx={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center 30%",
+            filter: "brightness(0.75) saturate(0.85)",
+          }}
+        />
+        {/* Warm light overlay */}
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(245, 235, 210, 0.25)",
+          }}
+        />
+        {/* Text overlay - centered */}
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            px: 2,
+          }}
+        >
+          <Typography
+            variant="h1"
+            sx={{
+              fontSize: { xs: "2.2rem", sm: "2.8rem", md: "3.4rem" },
+              fontWeight: 800,
+              color: "#2d4a1e",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              mb: 1,
+              lineHeight: 1.1,
+            }}
+          >
+            Our Story
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: { xs: "0.95rem", sm: "1.1rem", md: "1.2rem" },
+              fontWeight: 700,
+              color: "#2d4a1e",
+              letterSpacing: "0.02em",
+            }}
+          >
+            It all began with something simple: A Straw
+          </Typography>
+        </Box>
       </Box>
 
       {/* THE PROBLEM SECTION */}
@@ -280,131 +106,66 @@ function OurStory() {
         }}
       >
         <Container maxWidth="lg">
-          {/* Section Header */}
-          <Fade in timeout={600}>
-            <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
-              <Typography
+          <Grid container spacing={0} alignItems="stretch">
+            {/* Left - Image */}
+            <Grid size={{ xs: 12, md: 5 }}>
+              <Box
+                component="img"
+                src={problemImage}
+                alt="Plastic Straws Problem"
                 sx={{
-                  color: "secondary.main",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  mb: 1,
-                  letterSpacing: "0.5px",
+                  width: "100%",
+                  height: { xs: "280px", md: "100%" },
+                  objectFit: "cover",
+                  display: "block",
+                }}
+              />
+            </Grid>
+            {/* Right - Content */}
+            <Grid size={{ xs: 12, md: 7 }}>
+              <Box
+                sx={{
+                  px: { xs: 3, md: 6 },
+                  py: { xs: 4, md: 6 },
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
                 }}
               >
-                The Challenge
-              </Typography>
-              <Typography
-                variant="h2"
-                sx={{
-                  fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
-                  fontWeight: 700,
-                  color: "text.primary",
-                  mb: 2,
-                }}
-              >
-                The Problem We Saw
-              </Typography>
-              <Typography
-                sx={{
-                  color: "text.secondary",
-                  fontSize: { xs: "1rem", md: "1.1rem" },
-                  maxWidth: "600px",
-                  mx: "auto",
-                }}
-              >
-                Every convenience comes with a hidden cost to our planet
-              </Typography>
-            </Box>
-          </Fade>
-
-          <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Fade in timeout={800}>
-                <Box
+                <Typography
+                  variant="h2"
                   sx={{
-                    position: "relative",
-                    borderRadius: "16px",
-                    overflow: "hidden",
-                    boxShadow: "0 8px 30px rgba(0, 0, 0, 0.1)",
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: "0 12px 40px rgba(0, 0, 0, 0.15)",
-                    },
+                    fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.4rem" },
+                    fontWeight: 800,
+                    color: "#1a1a1a",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em",
+                    mb: 4,
                   }}
                 >
-                  <Box
-                    component="img"
-                    src={problemImage}
-                    alt="Plastic Straws Problem"
-                    sx={{
-                      width: "100%",
-                      height: "auto",
-                      display: "block",
-                    }}
-                  />
-                </Box>
-              </Fade>
-            </Grid>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Fade in timeout={1000}>
-                <Box>
-                  <Typography
-                    sx={{
-                      mb: 2.5,
-                      fontSize: { xs: "1rem", md: "1.1rem" },
-                      color: "text.secondary",
-                      lineHeight: 1.8,
-                    }}
-                  >
-                    Something small that we use every day, yet one that leaves behind
-                    long-lasting environmental waste.
-                  </Typography>
-                  <Typography
-                    sx={{
-                      mb: 2.5,
-                      fontSize: { xs: "1rem", md: "1.1rem" },
-                      color: "text.secondary",
-                      lineHeight: 1.8,
-                    }}
-                  >
-                    Plastic straws pollute long before they reach our drinks, and
-                    paper ones don't last long, leaving chemicals behind.
-                  </Typography>
-                  <Typography
-                    sx={{
-                      mb: 2.5,
-                      fontSize: { xs: "1rem", md: "1.1rem" },
-                      color: "text.secondary",
-                      lineHeight: 1.8,
-                    }}
-                  >
-                    Somewhere between convenience and care, we forgot the cost of
-                    every sip.
-                  </Typography>
-                  <Box
-                    sx={{
-                      p: 3,
-                      backgroundColor: "rgba(211, 182, 154, 0.15)",
-                      borderRadius: "12px",
-                      borderLeft: "4px solid",
-                      borderColor: "secondary.main",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontWeight: 600,
-                        fontStyle: "italic",
-                        fontSize: { xs: "1.1rem", md: "1.2rem" },
-                        color: "text.primary",
-                      }}
-                    >
-                      "Can something so small be made right?"
-                    </Typography>
-                  </Box>
-                </Box>
-              </Fade>
+                  The Problem
+                </Typography>
+                <Typography sx={{ fontSize: { xs: "1rem", md: "1.05rem" }, color: "#444", lineHeight: 1.8, mb: 2.5 }}>
+                  Something small that we use every day, yet one that leaves behind long-lasting environmental waste.
+                </Typography>
+                <Typography sx={{ fontSize: { xs: "1rem", md: "1.05rem" }, color: "#444", lineHeight: 1.8, mb: 2.5 }}>
+                  Plastic straws pollute long before they reach our drinks, and paper ones don't last long, leaving chemicals behind.
+                </Typography>
+                <Typography sx={{ fontSize: { xs: "1rem", md: "1.05rem" }, color: "#444", lineHeight: 1.8, mb: 4 }}>
+                  Somewhere between convenience and care, we forgot the cost of every sip.
+                </Typography>
+                <Typography
+                  sx={{
+                    fontWeight: 700,
+                    fontStyle: "italic",
+                    fontSize: { xs: "1.2rem", md: "1.4rem" },
+                    color: "#1a1a1a",
+                  }}
+                >
+                  "Can something so small be made right?"
+                </Typography>
+              </Box>
             </Grid>
           </Grid>
         </Container>
@@ -605,17 +366,6 @@ function OurStory() {
           <Fade in timeout={600}>
             <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
               <Typography
-                sx={{
-                  color: "secondary.main",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  mb: 1,
-                  letterSpacing: "0.5px",
-                }}
-              >
-                Our Reach
-              </Typography>
-              <Typography
                 variant="h2"
                 sx={{
                   fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
@@ -626,17 +376,7 @@ function OurStory() {
               >
                 From a Village Idea to a Global Shift
               </Typography>
-              <Typography
-                sx={{
-                  color: "text.secondary",
-                  fontSize: { xs: "1rem", md: "1.1rem" },
-                  maxWidth: "650px",
-                  mx: "auto",
-                }}
-              >
-                Our journey has always been about people and purpose. From rural roots
-                to 25+ countries, we've proven that meaningful change starts small.
-              </Typography>
+
             </Box>
           </Fade>
 
@@ -804,19 +544,6 @@ function OurStory() {
             <Grid size={{ xs: 12, md: 6 }}>
               <Fade in timeout={1000}>
                 <Box>
-                  {/* Accent Text */}
-                  <Typography
-                    sx={{
-                      color: "secondary.main",
-                      fontWeight: 600,
-                      fontSize: "1rem",
-                      mb: 1,
-                      letterSpacing: "0.5px",
-                    }}
-                  >
-                    Join Us
-                  </Typography>
-
                   <Typography
                     variant="h2"
                     sx={{
@@ -833,19 +560,19 @@ function OurStory() {
                     sx={{
                       mb: 3,
                       fontSize: { xs: "1rem", md: "1.1rem" },
-                      color: "text.secondary",
+                      color: "text.primary",
+                      fontWeight: 600,
+                      fontStyle: "italic",
                       lineHeight: 1.8,
                     }}
                   >
-                    Today, we take steps towards a cleaner planet and empower rural
-                    women with new skills and livelihoods. Join us in making a
-                    difference - one straw at a time.
+                    Join us in making a difference - one straw at a time.
                   </Typography>
 
                   <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
                     <Button
                       component={Link}
-                      to="/sunbird-straws"
+                      to="/initiatives"
                       variant="contained"
                       endIcon={<ArrowIcon />}
                       sx={{
@@ -866,31 +593,7 @@ function OurStory() {
                         },
                       }}
                     >
-                      Explore Our Products
-                    </Button>
-                    <Button
-                      component={Link}
-                      to="/our-team"
-                      variant="outlined"
-                      sx={{
-                        py: 1.5,
-                        px: 3,
-                        borderColor: "text.secondary",
-                        color: "text.primary",
-                        fontWeight: 600,
-                        borderRadius: "8px",
-                        fontSize: "1rem",
-                        textTransform: "none",
-                        borderWidth: "2px",
-                        transition: "all 0.3s ease",
-                        "&:hover": {
-                          borderColor: "text.primary",
-                          backgroundColor: "rgba(0, 0, 0, 0.03)",
-                          borderWidth: "2px",
-                        },
-                      }}
-                    >
-                      Meet Our Team
+                      Our Initiatives
                     </Button>
                   </Box>
                 </Box>

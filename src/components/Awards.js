@@ -140,8 +140,8 @@ const AwardCard = ({ item, index, isInView }) => {
         alt={`Award ${index + 1}`}
         sx={{
           width: "100%",
-          maxWidth: { xs: 140, md: 160 },
-          height: { xs: 100, md: 120 },
+          maxWidth: { xs: 160, md: 180 },
+          height: { xs: 120, md: 140 },
           objectFit: "contain",
           mb: 2,
           transition: "transform 0.4s ease",
@@ -270,46 +270,7 @@ function Awards() {
             },
           }}
         >
-          <Box
-            sx={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 1,
-              mb: 1,
-              animation: isInView ? "bounceIn 0.6s ease-out 0.2s both" : "none",
-              "@keyframes bounceIn": {
-                "0%": { opacity: 0, transform: "scale(0.5)" },
-                "50%": { transform: "scale(1.1)" },
-                "100%": { opacity: 1, transform: "scale(1)" },
-              },
-            }}
-          >
-            <EmojiEventsIcon
-              sx={{
-                color: "#f9a825",
-                fontSize: 28,
-                animation: isInView ? "trophyWiggle 1s ease-out 0.5s" : "none",
-                "@keyframes trophyWiggle": {
-                  "0%, 100%": { transform: "rotate(0deg)" },
-                  "20%": { transform: "rotate(-15deg)" },
-                  "40%": { transform: "rotate(15deg)" },
-                  "60%": { transform: "rotate(-10deg)" },
-                  "80%": { transform: "rotate(10deg)" },
-                },
-              }}
-            />
-            <Typography
-              sx={{
-                fontSize: "0.9rem",
-                fontWeight: 600,
-                color: "secondary.main",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-              }}
-            >
-              Recognition
-            </Typography>
-          </Box>
+
           <Typography
             variant="h2"
             sx={{

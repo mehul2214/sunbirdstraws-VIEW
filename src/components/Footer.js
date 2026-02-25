@@ -55,8 +55,8 @@ function Footer() {
           sx={{
             display: "flex",
             flexWrap: "wrap",
-            justifyContent: "space-between",
-            gap: 4,
+            justifyContent: "center",
+            gap: { xs: 4, md: 6 },
             flexDirection: { xs: "column", md: "row" },
             alignItems: { xs: "center", md: "flex-start" },
             textAlign: { xs: "center", md: "left" },
@@ -65,7 +65,8 @@ function Footer() {
           {/* Logo Section */}
           <Box
             sx={{
-              flex: "1 1 200px",
+              flex: "0 0 auto",
+              width: { xs: "auto", md: 180 },
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -84,7 +85,7 @@ function Footer() {
           </Box>
 
           {/* Address Section */}
-          <Box sx={{ flex: "1 1 200px", mb: { xs: 3, md: 0 } }}>
+          <Box sx={{ flex: "1 1 0", minWidth: 200, mb: { xs: 3, md: 0 } }}>
             <Typography
               variant="h6"
               sx={{
@@ -108,7 +109,7 @@ function Footer() {
           </Box>
 
           {/* Information Section */}
-          <Box sx={{ flex: "1 1 200px", mb: { xs: 3, md: 0 } }}>
+          <Box sx={{ flex: "1 1 0", minWidth: 200, mb: { xs: 3, md: 0 } }}>
             <Typography
               variant="h6"
               sx={{
@@ -135,7 +136,7 @@ function Footer() {
           </Box>
 
           {/* Contact & Social Section */}
-          <Box sx={{ flex: "1 1 200px" }}>
+          <Box sx={{ flex: "1 1 0", minWidth: 200 }}>
             <Typography
               variant="h6"
               sx={{

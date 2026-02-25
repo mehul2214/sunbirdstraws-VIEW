@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Box, Container, Typography } from "@mui/material";
-import HandshakeIcon from "@mui/icons-material/Handshake";
 
 // Import logos
 import ChristLogo from "../assets/Supported by/ChristBangalore.png";
@@ -188,44 +187,7 @@ function SupportedBy() {
             },
           }}
         >
-          <Box
-            sx={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 1,
-              mb: 1,
-              animation: isInView ? "iconBounce 0.6s ease-out 0.2s both" : "none",
-              "@keyframes iconBounce": {
-                "0%": { opacity: 0, transform: "scale(0.5)" },
-                "50%": { transform: "scale(1.15)" },
-                "100%": { opacity: 1, transform: "scale(1)" },
-              },
-            }}
-          >
-            <HandshakeIcon
-              sx={{
-                color: "secondary.main",
-                fontSize: 28,
-                animation: isInView ? "handshakeWave 1s ease-out 0.5s" : "none",
-                "@keyframes handshakeWave": {
-                  "0%, 100%": { transform: "rotate(0deg)" },
-                  "25%": { transform: "rotate(-10deg)" },
-                  "75%": { transform: "rotate(10deg)" },
-                },
-              }}
-            />
-            <Typography
-              sx={{
-                fontSize: "0.9rem",
-                fontWeight: 600,
-                color: "secondary.main",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-              }}
-            >
-              Partners
-            </Typography>
-          </Box>
+
           <Typography
             variant="h2"
             sx={{
